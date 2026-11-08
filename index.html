@@ -727,9 +727,13 @@
           applyFilter(next);
           if (next) document.getElementById("projects").scrollIntoView();
         });
+      });
+
+      layers.forEach(function (control) {
         control.addEventListener("pointerenter", function () { highlight(control.dataset.layer); });
         control.addEventListener("pointerleave", function () { highlight(null); });
       });
+
       reset.addEventListener("click", function () { applyFilter(null); });
 
       function onScroll() {
